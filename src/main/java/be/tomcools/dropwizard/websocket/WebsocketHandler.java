@@ -4,13 +4,12 @@ import be.tomcools.dropwizard.websocket.handling.WebsocketContainer;
 import be.tomcools.dropwizard.websocket.handling.WebsocketContainerInitializer;
 import be.tomcools.dropwizard.websocket.registration.EndpointRegistration;
 import io.dropwizard.core.setup.Environment;
-import jakarta.servlet.ServletContext;
-import jakarta.websocket.DeploymentException;
-import jakarta.websocket.server.ServerContainer;
-import jakarta.websocket.server.ServerEndpointConfig;
-import org.eclipse.jetty.websocket.jakarta.server.config.JakartaWebSocketServletContainerInitializer;
+import javax.servlet.ServletContext;
+import javax.websocket.server.ServerContainer;
+import javax.websocket.server.ServerEndpointConfig;
+import org.eclipse.jetty.websocket.javax.server.config.JavaxWebSocketServletContainerInitializer;
 
-public class WebsocketHandler implements JakartaWebSocketServletContainerInitializer.Configurator {
+public class WebsocketHandler implements JavaxWebSocketServletContainerInitializer.Configurator {
     private final EndpointRegistration endpointRegistration;
     private final WebsocketConfiguration configuration;
     private final Environment environment;
@@ -44,6 +43,4 @@ public class WebsocketHandler implements JakartaWebSocketServletContainerInitial
         WebsocketContainer container = new WebsocketContainer(configuration, serverContainer);
         container.registerEndpoints(endpointRegistration.getRegisteredEndpoints());
     }
-
-
 }

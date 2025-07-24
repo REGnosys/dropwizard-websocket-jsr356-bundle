@@ -7,7 +7,7 @@ import com.codahale.metrics.health.HealthCheck;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
-import jakarta.websocket.server.ServerEndpointConfig;
+import javax.websocket.server.ServerEndpointConfig;
 
 public class IntegrationTestApplication extends Application<IntegrationConfiguration> {
     private WebsocketBundle websocket = new WebsocketBundle();

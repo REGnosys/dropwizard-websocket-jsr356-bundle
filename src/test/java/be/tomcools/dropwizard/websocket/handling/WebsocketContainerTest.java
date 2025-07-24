@@ -3,8 +3,8 @@ package be.tomcools.dropwizard.websocket.handling;
 import be.tomcools.dropwizard.websocket.WebsocketConfiguration;
 import be.tomcools.dropwizard.websocket.registration.Endpoints;
 import be.tomcools.dropwizard.websocket.registration.endpointtypes.EndpointAnnotatedJava;
-import jakarta.websocket.DeploymentException;
-import jakarta.websocket.server.ServerContainer;
+import javax.websocket.DeploymentException;
+import javax.websocket.server.ServerContainer;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

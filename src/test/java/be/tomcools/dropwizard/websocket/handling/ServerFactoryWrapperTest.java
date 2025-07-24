@@ -5,7 +5,7 @@ import io.dropwizard.core.server.ServerFactory;
 import io.dropwizard.core.setup.Environment;
 import org.eclipse.jetty.server.Server;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -16,7 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ServerFactoryWrapperTest {
+class ServerFactoryWrapperTest {
     private final Environment environment = mock(Environment.class, RETURNS_DEEP_STUBS);
 
     @Mock
@@ -30,38 +30,38 @@ public class ServerFactoryWrapperTest {
     private ServerFactoryWrapper wrapper;
 
     @BeforeEach
-    public void init() {
+    void init() {
         lenient().when(serverFactory.build(environment)).thenReturn(server);
     }
 
     @Test
-    public void canConstructWrapperWithHandlerAndServerFactory() {
+    void canConstructWrapperWithHandlerAndServerFactory() {
         new ServerFactoryWrapper(serverFactory, handler);
     }
 
     @Test
-    public void whenBuildIsCalledForEnvironmentCallsBuildOnWrappedObject() {
+    void whenBuildIsCalledForEnvironmentCallsBuildOnWrappedObject() {
         wrapper.build(environment);
 
         verify(serverFactory).build(environment);
     }
 
     @Test
-    public void whenBuildIsCalledSetsBuiltServerObjectOnTheApplicationContext() {
+    void whenBuildIsCalledSetsBuiltServerObjectOnTheApplicationContext() {
         wrapper.build(environment);
 
         verify(environment.getApplicationContext()).setServer(server);
     }
 
     @Test
-    public void whenBuildIsCalledSetsBuiltServerObjectOnTheAdminContext() {
+    void whenBuildIsCalledSetsBuiltServerObjectOnTheAdminContext() {
         wrapper.build(environment);
 
         verify(environment.getAdminContext()).setServer(server);
     }
 
     @Test
-    public void whenBuildIsCalledSetsReturnsOriginalServerObject() {
+    void whenBuildIsCalledSetsReturnsOriginalServerObject() {
         Server buildServer = wrapper.build(environment);
 
         assertThat(buildServer, is(server));

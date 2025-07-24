@@ -2,12 +2,12 @@ package be.tomcools.dropwizard.websocket.registration;
 
 import be.tomcools.dropwizard.websocket.registration.endpointtypes.EndpointProgrammaticJava;
 import be.tomcools.dropwizard.websocket.registration.endpointtypes.EndpointType;
-import jakarta.websocket.Endpoint;
-import jakarta.websocket.*;
-import jakarta.websocket.server.ServerEndpoint;
-import jakarta.websocket.server.ServerEndpointConfig;
+import javax.websocket.Endpoint;
+import javax.websocket.*;
+import javax.websocket.server.ServerEndpoint;
+import javax.websocket.server.ServerEndpointConfig;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

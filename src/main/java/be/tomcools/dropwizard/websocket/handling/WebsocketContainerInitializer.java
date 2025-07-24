@@ -2,13 +2,13 @@ package be.tomcools.dropwizard.websocket.handling;
 
 
 import io.dropwizard.jetty.MutableServletContextHandler;
-import org.eclipse.jetty.websocket.jakarta.server.config.JakartaWebSocketServletContainerInitializer;
+import org.eclipse.jetty.websocket.javax.server.config.JavaxWebSocketServletContainerInitializer;
 
 public class WebsocketContainerInitializer {
     public void initialize(MutableServletContextHandler contextHandler,
-                           JakartaWebSocketServletContainerInitializer.Configurator configurator) {
+                           JavaxWebSocketServletContainerInitializer.Configurator configurator) {
         try {
-            JakartaWebSocketServletContainerInitializer.configure(contextHandler, configurator);
+            JavaxWebSocketServletContainerInitializer.configure(contextHandler, configurator);
         } catch (Exception e) {
             throw new IllegalStateException("Could not initialize context handler to enable Websockets", e);
         }

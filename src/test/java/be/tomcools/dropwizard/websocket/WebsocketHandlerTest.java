@@ -5,11 +5,11 @@ import be.tomcools.dropwizard.websocket.registration.EndpointRegistration;
 import be.tomcools.dropwizard.websocket.registration.Endpoints;
 import io.dropwizard.core.Configuration;
 import io.dropwizard.core.setup.Environment;
-import jakarta.websocket.*;
-import jakarta.websocket.server.ServerEndpoint;
-import jakarta.websocket.server.ServerEndpointConfig;
+import javax.websocket.*;
+import javax.websocket.server.ServerEndpoint;
+import javax.websocket.server.ServerEndpointConfig;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -17,9 +17,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.*;
 
-
 @ExtendWith(MockitoExtension.class)
-public class WebsocketHandlerTest {
+class WebsocketHandlerTest {
 
     private final Environment environment = mock(Environment.class, RETURNS_DEEP_STUBS);
     private final WebsocketBundleConfiguration configuration = (WebsocketBundleConfiguration)mock(Configuration.class,
@@ -41,24 +40,24 @@ public class WebsocketHandlerTest {
     private WebsocketHandler sut;
 
     @BeforeEach
-    public void init() {
+    void init() {
         lenient().when(endpointRegistration.getRegisteredEndpoints()).thenReturn(endpoints);
     }
 
     @Test
-    public void canConstructHandlerWithEnvironment() {
+    void canConstructHandlerWithEnvironment() {
         new WebsocketHandler(configuration.getWebsocketConfiguration(), environment);
     }
 
     @Test
-    public void whenAddAnnotatedEndpointIsCalledPassesObjectToEndpointRegistration() {
+    void whenAddAnnotatedEndpointIsCalledPassesObjectToEndpointRegistration() {
         sut.addEndpoint(TestEndpoint.class);
 
         verify(endpointRegistration).add(TestEndpoint.class);
     }
 
     @Test
-    public void whenAddProgrammaticEndpointIsCalledPassesObjectToEndpointRegistration() {
+    void whenAddProgrammaticEndpointIsCalledPassesObjectToEndpointRegistration() {
         ServerEndpointConfig config = ServerEndpointConfig.Builder.create(TestEndpoint.class, "/path").build();
         sut.addEndpoint(config);
 
@@ -66,7 +65,7 @@ public class WebsocketHandlerTest {
     }
 
     @Test
-    public void whenInitializeIsCalled_InitializesWebsocketContainer() {
+    void whenInitializeIsCalled_InitializesWebsocketContainer() {
         sut.initialize();
 
         verify(containerInitializer).initialize(environment.getApplicationContext(), sut);   
@@ -83,7 +82,7 @@ public class WebsocketHandlerTest {
         }
 
         @OnError
-        public void onError(Throwable error) {
+        void onError(Throwable error) {
         }
 
         @OnMessage
