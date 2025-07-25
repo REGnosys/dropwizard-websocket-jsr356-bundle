@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>be.tomcools</groupId>
+    <groupId>com.regnosys</groupId>
     <artifactId>dropwizard-websocket-jsr356-bundle</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.0</version>
     <packaging>jar</packaging>
 
     <name>dropwizard-websocket-jsr356-bundle</name>
     <description>Dropwizard bundle to enable the use of Java Websockets.</description>
-    <url>https://github.com/TomCools/dropwizard-websocket-jee7-bundle</url>
+    <url>https://github.com/REGnosys/dropwizard-websocket-jsr356-bundle</url>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -22,20 +22,25 @@
             <email>tom.cools@live.be</email>
             <url>http://tomcools.be</url>
         </developer>
+        <developer>
+            <name>James Annesley</name>
+            <email>james.annesley@regnosys.com</email>
+            <url>https://renosys.com</url>
+        </developer>
     </developers>
 
     <scm>
-        <url>https://github.com/TomCools/dropwizard-websocket-jee7-bundle</url>
-        <connection>scm:git:https://github.com/TomCools/dropwizard-websocket-jee7-bundle.git</connection>
-        <developerConnection>scm:git:https://github.com/TomCools/dropwizard-websocket-jee7-bundle.git</developerConnection>
-        <tag>dropwizard-websocket-jsr356-bundle-0.0.104</tag>
+        <url>https://github.com/REGnosys/dropwizard-websocket-jsr356-bundle</url>
+        <connection>scm:git:https://github.com/REGnosys/dropwizard-websocket-jsr356-bundle.git</connection>
+        <developerConnection>scm:git:https://github.com/REGnosys/dropwizard-websocket-jsr356-bundle.git</developerConnection>
+        <tag>dropwizard-websocket-jsr356-bundle-3.0.0</tag>
     </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <dropwizard.version>3.0.14</dropwizard.version>
-        <java.version>21</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencyManagement>

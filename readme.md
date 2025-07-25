@@ -1,12 +1,12 @@
-Websocket (JSR 356) bundle for Dropwizard
+Websocket (JSR 356) bundle for Dropwizard 3
 ==========
-[![Latest Build](https://github.com/TomCools/dropwizard-websocket-jsr356-bundle/actions/workflows/github-build-maven.yml/badge.svg?branch=main)](https://github.com/TomCools/dropwizard-websocket-jsr356-bundle/actions/workflows/github-build-maven.yml)
-[![Latest Release](https://img.shields.io/maven-central/v/be.tomcools/dropwizard-websocket-jsr356-bundle)](http://mvnrepository.com/artifact/be.tomcools/dropwizard-websocket-jsr356-bundle)
-[![License](https://img.shields.io/badge/License-Apache%202-blue.svg)](https://github.com/TomCools/dropwizard-websocket-jee7-bundle/blob/master/LICENSE)
+[![Latest Build](https://github.com/REGnosys/dropwizard-websocket-jsr356-bundle/actions/workflows/github-build-maven.yml/badge.svg?branch=main)](https://github.com/REGnosys/dropwizard-websocket-jsr356-bundle/actions/workflows/github-build-maven.yml)
+[![Latest Release](https://img.shields.io/maven-central/v/com.regnosys/dropwizard-websocket-jsr356-bundle)](http://mvnrepository.com/artifact/com.regnosys/dropwizard-websocket-jsr356-bundle)
+[![License](https://img.shields.io/badge/License-Apache%202-blue.svg)](https://github.com/REGnosys/dropwizard-websocket-jee7-bundle/blob/master/LICENSE)
 
-*Adding some Websocket-magic to Dropwizard.*
+*Adding some Websocket-magic to Dropwizard 3*
 
-This repository contains a Bundle to be used with Dropwizard.
+This repository contains a Bundle to be used with Dropwizard 3.
 For more information about Dropwizard, please visit: [dropwizard.io](http://www.dropwizard.io).
 
 The goal of the bundle was to add support for the JSR 356 Websocket specification.
@@ -15,23 +15,14 @@ For some reason, Dropwizard doesn't support this out of the box.
 How does the bundle work?
 ---
 
-The baseline for this version is *Java 11*, which is also the baseline for Dropwizard 4.
+The baseline for this version is *Java 11*, which is also the baseline for Dropwizard 3.
 
-Add the maven dependency: 
+Add the maven dependency:
 
     <dependency>
-      <groupId>be.tomcools</groupId>
+      <groupId>com.regnosys</groupId>
       <artifactId>dropwizard-websocket-jsr356-bundle</artifactId>
-      <version>4.0.0</version>
-    </dependency>
-    
-This project used to contain an implementation for Dropwizard 2.x, based on Java 8.
-While we are deprecating that and no longer supporting it, it's still available.
-
-    <dependency>
-      <groupId>be.tomcools</groupId>
-      <artifactId>dropwizard-websocket-jee7-bundle</artifactId>
-      <version>2.1.6</version>
+      <version>3.0.0</version>
     </dependency>
 
 Add the WebsocketBundle object to the Application.class and add the Endpoint classes you want to load:
@@ -58,11 +49,11 @@ Add the WebsocketBundle object to the Application.class and add the Endpoint cla
 
 Start your server. During startup, all registered Websocket-endpoints will be logged in the same way other resources are logged.
 
-    INFO  [2017-05-16 18:18:04,230] be.tomcools.dropwizard.websocket.handling.WebsocketContainer: Registered websocket endpoints: 
+    INFO  [2017-05-16 18:18:04,230] handling.com.regnosys.dropwizard.websocket.WebsocketContainer: Registered websocket endpoints: 
     
-    	GET		/programmatic (be.tomcools.dropwizard.websocket.integrationtest.programmaticjavaee.ProgrammaticServerEndpoint)
-    	GET		/pingpong (be.tomcools.dropwizard.websocket.integrationtest.annotatedjavaee.PingPongServerEndpoint)
-    
+    	GET		/programmatic (programmaticjavaee.integrationtest.com.regnosys.dropwizard.websocket.ProgrammaticServerEndpoint)
+    	GET		/pingpong (annotatedjavaee.integrationtest.com.regnosys.dropwizard.websocket.PingPongServerEndpoint)
+
 
 Configuration
 ---
@@ -96,7 +87,7 @@ public class WebsocketConfiguration {
 }
 
 
-    
+
 Need help? Found an issue? Want extra functionality?
 ---
 Please report any issues you find. I will frequently check and update if required.
